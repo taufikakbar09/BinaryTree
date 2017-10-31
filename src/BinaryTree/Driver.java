@@ -48,8 +48,7 @@ public class Driver {
         System.out.println("\nPost order : ");
         lbt.postorderoutput();
         System.out.println("Compare = " + lb.compare(lb.root, lbt.root));
-        
-        
+               
         System.out.println("Data 3");
         System.out.print("Setelah Clone dari data 2");
         LinkedBT lbtt = (LinkedBT) lbt.clone();
@@ -69,9 +68,5 @@ public class Driver {
         System.out.println("\nPost order : ");
         lbtt.postorderoutput();
 
-//        ba.postOrder();
-//        System.out.println("");
-//        ba.preOrder();
-                  
     }
 }
