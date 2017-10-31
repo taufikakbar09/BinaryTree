@@ -4,51 +4,74 @@ import java.util.Scanner;
 
 public class Driver {
      public static void main(String[] args){            
-        Scanner scan = new Scanner(System.in);
+        BinaryTreeTraverse bt = new BinaryTreeTraverse();
+        bt.insert(1);
+        bt.insert(2);
+        bt.insert(3);
+        System.out.print("\nPre order : ");
+        bt.preOrder();
+        System.out.print("\nIn order : ");
+        bt.inOrder();
+        System.out.print("\nPost order : ");
+        bt.postOrder();
+        System.out.print("\nClone Post order : ");
+        bt.clonepostorder();
+        BinaryTreeTraverse btt = new BinaryTreeTraverse();
+//        btt.clone(bt);
+//        
+//        bt.Swap(bt.root);
+//        System.out.println(bt.compare(bt.root, btt.root));
         
-        BT bt = new BT(); 
+        System.out.println("");
+        System.out.println("Data 1");
+        LinkedBT lb = new LinkedBT();
+        lb.root = new NodeBt(1);
+        lb.root.leftChild = new NodeBt(2);
+        lb.root.rightChild = new NodeBt(3);
+        System.out.println("\nPre order : ");
+        lb.preorderoutput();
+        System.out.println("\nIn order : ");
+        lb.inorderoutput();
+        System.out.println("\nPost order : ");
+        lb.postorderoutput();
         
-        System.out.println("Binary Tree Test\n");          
-        char ch;        
-        do    
-        {
-            System.out.println("\nBinary Tree Operations\n");
-            System.out.println("1. insert ");
-            System.out.println("2. search");
-            System.out.println("3. count nodes");
-            System.out.println("4. check empty");
- 
-            int choice = scan.nextInt();            
-            switch (choice)
-            {
-            case 1 : 
-                System.out.println("Masukkan element :  ");
-                bt.insert( scan.nextInt() );                     
-                break;                          
-            case 2 : 
-                System.out.println("Masukkan element :  ");
-                System.out.println("Hasil Pencarian : "+ bt.search( scan.nextInt() ));
-                break;                                          
-            case 3 : 
-                System.out.println("Nodes = "+ bt.countNodes());
-                break;     
-            case 4 : 
-                System.out.println("Empty status = "+ bt.isEmpty());
-                break;            
-            default : 
-                System.out.println("SALAH!! \n ");
-                break;   
-            }
-            
-            System.out.print("\nPost order : ");
-            bt.postorder();
-            System.out.print("\nPre order : ");
-            bt.preorder();
-            System.out.print("\nIn order : ");
-            bt.inorder();
- 
-            System.out.println("\n\nLanjut (Pilih y or n) \n");
-            ch = scan.next().charAt(0);                        
-        } while (ch == 'Y'|| ch == 'y');               
+        System.out.println("");
+        System.out.println("Data 2");
+        LinkedBT lbt = new LinkedBT();
+        lbt.root = new NodeBt(1);
+        lbt.root.leftChild = new NodeBt(2);
+        lbt.root.rightChild = new NodeBt(3);
+        System.out.println("\nPre order : ");
+        lbt.preorderoutput();
+        System.out.println("\nIn order : ");
+        lbt.inorderoutput();
+        System.out.println("\nPost order : ");
+        lbt.postorderoutput();
+        System.out.println("Compare = " + lb.compare(lb.root, lbt.root));
+        
+        
+        System.out.println("Data 3");
+        System.out.print("Setelah Clone dari data 2");
+        LinkedBT lbtt = (LinkedBT) lbt.clone();
+        System.out.println("\nPre order : ");
+        lbtt.preorderoutput();
+        System.out.println("\nIn order : ");
+        lbtt.inorderoutput();
+        System.out.println("\nPost order : ");
+        lbtt.postorderoutput();
+        
+        System.out.println("Setelah di Swap Data 3");
+        lbtt.Swap(lbtt.root);
+        System.out.println("\nPre order : ");
+        lbtt.preorderoutput();
+        System.out.println("\nIn order : ");
+        lbtt.inorderoutput();
+        System.out.println("\nPost order : ");
+        lbtt.postorderoutput();
+
+//        ba.postOrder();
+//        System.out.println("");
+//        ba.preOrder();
+                  
     }
 }
